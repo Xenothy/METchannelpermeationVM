@@ -61,7 +61,6 @@ from mpl_toolkits.mplot3d import Axes3D # yes it is used ignore the error
 #=============================================================================
 # Set up the plot
 
-#fig, axarr = plt.subplots(2,4, gridspec_kw={'width_ratios': [3,2,3,3]})
 fig, axarr = plt.subplots(2,4, figsize = (15,5))
 fig.tight_layout()
 
@@ -493,7 +492,7 @@ k1 = tauSlope #from slope of time constant fit (in per mole per second ^ nhill)
 
 k1_CI = tau_slope_CI
 Nch = number_Of_Channels #number of channels
-D = concentration_For_Model  # in nM, picking a concentration for now, could loop in future. 
+D = concentration_For_Model  # in mM
 
 # model!
 def MET_Model(Eb, Deltab, DeltaE, zet, n, k1, p0, T, kT, k0, Nch, uM, mV):  

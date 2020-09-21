@@ -136,7 +136,7 @@ def doseResp(x, halfB, nH):
     term3 = (1 + (x / halfB)** nH)
     return term1 + (term2 / term3)
 
-#plt.gcf().subplots_adjust(bottom=0.13)
+
 axarr[0,0].xaxis.set_major_locator(ticker.MultipleLocator(20))
 axarr[0,0].xaxis.set_minor_locator(ticker.MultipleLocator(10))
 ax2 = axarr[0,0].twinx()
@@ -382,7 +382,7 @@ print('The basal time constant is:', k12)
 print('\n\n')
 
 Nch = number_Of_Channels #number of channels
-D = concentration_For_Model  # in nM, picking a concentration for now, could loop in future. 
+D = concentration_For_Model  # in mM
 
 def MET_Model(Eb, Deltab, DeltaE, zet, n, k1, p0, T, kT, k0, Nch, uM, mV):  
     V = mV * (10**-3)
@@ -396,7 +396,7 @@ def MET_Model(Eb, Deltab, DeltaE, zet, n, k1, p0, T, kT, k0, Nch, uM, mV):
     return Nentry, E1, E2
 
 #Nentry_concentrations = np.linspace(0.01, 100000, 1000000) # for best results
-Nentry_concentrations = np.linspace(0.01, 100000, 10000) # to speed up the model
+Nentry_concentrations = np.linspace(0.01, 100000, 10000) # to speed up the modelling
 
 Nentry_conc_list1 = []
 Nentry_conc_list2 = []
@@ -442,7 +442,6 @@ axarr[1,1].plot(xRange, basal_ep, color = color[1], lw = linewidth)
 axarr[1,1].set_ylabel('Free Energy Difference (kT)')
 axarr[1,1].set_xlabel('Relative Electrical Distance')
 axarr[1,1].set_title('Energy Profiles')
-
 axarr[1,1].legend(labels, frameon = False)
 
 figManager = plt.get_current_fig_manager()
